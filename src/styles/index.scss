@@ -1,0 +1,158 @@
+html::-webkit-scrollbar{
+    width: 0;
+}
+.container{
+    max-width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+.wrapper{
+    margin: 1% 0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:20%;
+    .timer{
+        width: 70%;
+        margin-block: 15%;
+        text-align: center;
+        font-weight: 700;
+    }
+    .sounds{
+        margin-top: 15%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        .button_sound{
+        width: 3em;
+        height: 1.1em;
+        margin: 1% 2% 15%;
+        border-radius: 10px;
+        display: flex;
+        align-items: flex-start;
+        border:1px solid $color_primary;
+        background-color: $color_primary;
+        &-circle{
+            width: 1em;
+            height: 1em;
+            border-radius: 10px;
+            border:1px solid black;
+            background-color: azure;
+        }
+        }
+        .button_sound:hover{
+            cursor: pointer;
+        }
+        .off{
+            justify-content: flex-end;
+            background-color: $color_body;
+            border:1px solid black;
+        }
+    }
+}
+.canvas{
+    display: block;
+    margin: 1% 3%;
+    border:1px solid ;
+   
+}
+
+.second{
+    background-color: $color_body;
+    .wrapper{
+        .timer{
+         color:azure;
+        }
+    }
+.button_answer:hover{
+    background-color: $color_body;
+    color:$color_second;
+    border: 2px solid azure;
+    cursor: pointer;
+}
+.tasks{
+    background-color: $color_second;
+}
+.tasksList{
+    &_item{
+        margin-block: 3%;
+        list-style-type: none;
+        text-align: center; 
+        font-family: "Roboto_regular";
+        font-size: 115%;
+        font-weight: 500;          
+    }
+    &_item:hover{
+        cursor: pointer;
+        color:$color_second;
+    }
+}
+.menu{
+    &_item{
+        color:$color_second;
+    }
+    &_item:hover{
+        cursor:pointer;
+        color:azure;
+    }
+    .burger{
+        display:none;
+    }
+}
+
+.modal{
+    background-color: azure;
+    color:$color_second;
+  .button_new-game{
+    background-color: $color_body;
+    color:$color_second;
+  }  
+}
+}
+@media only screen and (max-width:900px) and (min-width: 500px){
+    .container{
+        max-width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-content: center;
+    }
+    .wrapper{
+        margin: 1% auto;
+        display: flex;
+        flex-direction: row;
+        width: 35%;
+        justify-content: center;
+        flex-wrap: wrap;
+        .timer{
+            margin: 15% 5%;
+            width: 45%;
+            text-align: center;
+        }
+        .sounds{
+            margin: 0 3%;
+            .button_sound{
+                .button_mode{
+                    width: 10em;
+                    height: 2em;
+                    margin: 15% 10% 15% 5%;
+                    border-radius: 15px;
+                    &-circle{
+                        width: 1.9em;
+                        height: 1.9em;
+                        border-radius: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .canvas{
+        margin: 0 auto;
+    }
+}

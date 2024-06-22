@@ -1,0 +1,95 @@
+.container{
+    position: relative;
+}
+.tasks{
+    position: absolute;
+    width: 55%;
+    display: flex;
+    right: 22%;
+    top: 4%;
+    justify-content: center;
+    background-color: azure;
+    border:1px solid $color_primary;
+    .tasksList{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        justify-content: space-between;
+        font-family: "Roboto_regular";
+        .easy{
+            margin-block: 3%;
+            list-style-type: none;
+            text-align: center;            
+            font-size: 100%;
+            font-weight: 700; 
+            color:green;           
+        }
+        .easy:hover{
+            cursor: pointer;
+            color:$color_primary;
+        }
+        .normal{
+            margin-block: 3%;
+            list-style-type: none;
+            text-align: center;            
+            font-size: 100%;
+            font-weight: 500; 
+            color:orange;
+        }
+        .normal:hover{
+            cursor: pointer;
+            color:$color_primary;
+        }
+        .hard{
+            margin-block: 3%;
+            list-style-type: none;
+            text-align: center;            
+            font-size: 100%;
+            font-weight: 500; 
+            color:red;
+        }
+        .hard:hover{
+            cursor: pointer;
+            color:$color_primary;
+        }
+    }
+}
+@media only screen and (max-width:1100px) and (min-width: 901px){
+    .tasks{
+        width: 55%;
+        left: 22%;
+        top: 4%;
+        font-size: 80%;
+    }
+}
+@media only screen and (max-width:900px) and (min-width: 500px){
+    .tasks{
+        position: absolute;
+        width:80%;
+        height: 80%;
+        display:flex;        
+        left:10%;
+        top: 20%;
+        justify-content: center;
+        background-color: azure;
+        .tasksList{
+            margin-block: 5%;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            justify-content: space-between;
+            &_item{
+                margin-block: 3%;
+                list-style-type: none;
+                text-align: center; 
+                font-family: "Roboto_regular";
+                font-size: 115%;
+                font-weight: 500;            
+            }
+            &_item:hover{
+                cursor: pointer;
+                color:$color_primary;
+            }
+        }
+    }
+}
