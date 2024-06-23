@@ -12,37 +12,6 @@ canvas.setAttribute('height', height);
 
 const ctx = canvas.getContext('2d');
 
-// const drawRects = (rows, cols) => {
-//     let axisX = 350;    
-//     let lengthsCols = 0;
-//     let lengthsRows = 0;
-//     rows.forEach((row, index)=> {  
-//         if( index % 5 === 0){
-//             if (lengthsRows < row.length) {
-//                 lengthsRows = row.length
-//             }                
-//             let axisY = 300;  
-//             axisX -= 40;           
-//             ctx.beginPath();
-//             ctx.moveTo(axisX, axisY);
-//             ctx.lineTo(axisX, axisY - lengthsRows*40);
-//             ctx.lineWidth = 5;
-//             ctx.stroke();
-          
-//             cols.forEach((col, number)=>{
-//                 if(number % 5 === 0){
-//                     if (lengthsCols < col.length) {
-//                         lengthsCols = col.length
-//                     }            
-//                     axisY -= 40;           
-//                     ctx.strokeRect(axisX, axisY, 200, 200);  
-//                 }
-                
-//             })
-//         }
-       
-//     });
-// }
 let axis;
 let gridMeasure;
 let spice;
@@ -89,7 +58,6 @@ const drawLine = (purpose, data ) => {
         if(i < data[`${purpose}`].length){
             ctx.lineWidth = 2;  
             writeClues(purpose, data[`${purpose}`][i], axisNew, maxLength, gridMeasure, spice);
-            console.log(axisNew)
         }     
         axisNew += gridMeasure;        
     }
@@ -168,21 +136,16 @@ const getMaxLength = (arr) => {
     arr.forEach(item => {
     item.length > maxLength ? maxLength = item.length : maxLength;
     })
-    console.log(maxLength, "maxLength")
     return maxLength;
 }
 
 const getPicture = pic => {
-return new Promise((res, rej) => {
-        const data = JSON.stringify(pic);
-        data ?
-         res(console.log("data")):
-         rej(console.log('no data'))
+return new Promise(() => {
+        JSON.stringify(pic);
       })
 }
 
 getPicture(pictures).then(drawField(pictures[0]));
-// getPicture(pictures).then(drawRects(pictures[0].rows, pictures[0].cols))
 
 
 export  {canvas, ctx, drawField, getPicture, drawBoldLine};
