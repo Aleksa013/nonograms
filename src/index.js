@@ -394,5 +394,4 @@ canvas.addEventListener("mousedown", (event) => {
 }else{
   return false;
 }
- console.log(arrOfAnswers, usedGrids)
 })

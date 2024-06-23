@@ -26,7 +26,6 @@ const continueGames = (arr, data,  numberPictures, audio, purpose, themeOn = fal
             const drawAgain = setInterval(()=> {
                 if(!arr.length){
                     clearInterval(drawAgain);
-                    console.log('error')
                 }
                 const grid = arr.shift();
                 const x = grid[0],
