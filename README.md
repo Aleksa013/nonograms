@@ -1,2 +1,3 @@
 # nonograms
-my study project
+my study project 
+https://aleksa013.github.io/nonograms/dist/
